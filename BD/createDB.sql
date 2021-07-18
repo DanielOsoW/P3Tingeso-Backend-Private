@@ -1,12 +1,12 @@
-
-drop database diplomadosDB;
-create database diplomadosDB;
-\c diplomadosDB;
+drop database if exists diplomadosdb;
+create database diplomadosdb;
+\c diplomadosdb;
 
 CREATE TABLE "diplomado" (
   "id" serial,
   "titulo" varchar(100),
-  "descripcion" varchar(100),
+  
+  "descripcion" varchar(1000),
   PRIMARY KEY ("id")
 );
 
