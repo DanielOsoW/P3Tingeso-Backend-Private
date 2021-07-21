@@ -1,4 +1,6 @@
-# Backend : Servicio Rest 	:exploding_head:
+# Tingeso instrucciones base de datos entrega 3
+
+## Backend : Servicio Rest 	:exploding_head:
 <p align="center"><a target="_blank"><img src="https://cleventy.com/wp-content/uploads/2020/05/spring-boot.png" width="400"></a></p>
 
 ## Conexión a BD con SQL2O en Java Spring
@@ -22,9 +24,8 @@ Ejemplo creado a con de [Spring Initializr](https://start.spring.io/) basado en 
 ## Linux o MAC
 ### `./gradlew bootRun`
 
-# Tingeso instrucciones base de datos entrega 3
 
-# Backend : Base de datos 	:cold_face:
+## Backend : Base de datos 	:cold_face:
 <p align="center"><a target="_blank"><img src="https://programacion.net/files/article/20151129021117_postgresql-logo.png" width="400"></a></p>
 
 ### Requisitos
