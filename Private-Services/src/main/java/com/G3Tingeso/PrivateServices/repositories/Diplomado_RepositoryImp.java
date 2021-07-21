@@ -24,7 +24,7 @@ public class Diplomado_RepositoryImp implements Diplomado_Repository {
     @Override
     public List<Diplomado> getAllDiplomados() {
         try(Connection conn = sql2o.open()){
-            return conn.createQuery("select * from diplomado")
+            return conn.createQuery("select * from diplomado ORDER BY id")
                     .executeAndFetch(Diplomado.class);
         } catch (Exception e) {
             System.out.println(e.getMessage());
