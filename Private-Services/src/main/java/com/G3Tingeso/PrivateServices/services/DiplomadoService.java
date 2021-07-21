@@ -28,6 +28,11 @@ public class DiplomadoService {
     public List<Diplomado> getAllDiplomado(){
         return DiplomadoRepository.getAllDiplomados();
     }
+    
+    @GetMapping("/diplomados/{id}")
+    public Diplomado getDiplomado(@PathVariable int id){
+        return DiplomadoRepository.getDiplomado(id);
+    }
 
     @GetMapping("/diplomados/count")
     public String countDiplomado(){
@@ -35,14 +40,14 @@ public class DiplomadoService {
         return String.format("Tienes en total, %s de la lista.", total);
     }
 
-    @PostMapping("/diplomados/a")
+    @PostMapping("/diplomados/create")
     @ResponseBody
     public Boolean createDiplomado(@RequestBody Diplomado Diplomado){
         boolean result = DiplomadoRepository.createDiplomado(Diplomado);
         return result;
     }
 
-    @GetMapping("/diplomados/d/{id}")
+    @GetMapping("/diplomados/delete/{id}")
     public boolean deleteDiplomado(@PathVariable int id){
         return DiplomadoRepository.deleteDiplomado(id);
     }
@@ -51,9 +56,6 @@ public class DiplomadoService {
          return DiplomadoRepository.updateDiplomado(Diplomado);
     }
 
-    @GetMapping("/diplomados/{id}")
-    public Diplomado getDiplomado(@PathVariable int id){
-        return DiplomadoRepository.getDiplomado(id);
-    }
+
     
 }
