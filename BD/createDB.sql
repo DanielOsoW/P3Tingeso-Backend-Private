@@ -2,13 +2,30 @@ drop database if exists diplomadosdb;
 create database diplomadosdb;
 \c diplomadosdb;
 
+
 CREATE TABLE "diplomado" (
   "id" serial,
   "titulo" varchar(100),
-  
-  "descripcion" varchar(1000),
+  "introduccion" varchar(5000),
+  "objetivo" varchar(5000),
+  "descripcion" varchar(5000),
+  "horas" int,
+  "cursos" int,
+  "imagen" varchar(1000),
   PRIMARY KEY ("id")
 );
+
+CREATE TABLE "Información" (
+  "id" serial,
+  "nombre" varchar(100),
+  "contenido" varchar(6000),
+  "id_diplomado" serial,
+  PRIMARY KEY ("id"),
+  CONSTRAINT fk_docente_diplomado
+    FOREIGN KEY(id_diplomado) 
+      REFERENCES diplomado(id)
+);
+
 
 CREATE TABLE "rol" (
   "id" serial,
