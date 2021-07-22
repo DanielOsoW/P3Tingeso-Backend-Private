@@ -65,17 +65,17 @@ CREATE TABLE "titulo" (
       REFERENCES docente(id)
 );
 
-CREATE TABLE "user" (
+CREATE TABLE "usuario" (
   "id" serial,
   "email" varchar(100),
   "password" varchar(100),
   "id_docente" serial,
   "id_rol" serial,
   PRIMARY KEY ("id"),
-  CONSTRAINT fk_user_docente
+  CONSTRAINT fk_usuario_docente
     FOREIGN KEY(id_docente) 
       REFERENCES docente(id),
-  CONSTRAINT fk_user_rol
+  CONSTRAINT fk_usuario_rol
     FOREIGN KEY(id_rol) 
       REFERENCES rol(id)
 );

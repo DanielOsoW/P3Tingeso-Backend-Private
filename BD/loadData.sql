@@ -1,3 +1,4 @@
+--POSTULANTE
 insert into postulante (nombre,correo,num_telefono) values 
     ('Francesco Wolf', 'fenrico0@ifeng.com','+56912001611'),
     ('Kathy Buchanan', 'hpowelee1@mlb.com','+56958793164'),
@@ -10,7 +11,13 @@ insert into postulante (nombre,correo,num_telefono) values
     ('Lynsey Dale', 'bfazzioli8@facebook.com','+56940414825'),
     ('Tori Magana', 'pdechastelain9@aol.com','+56995391409');
 
+--ROL
+insert into rol (descripcion) values 
+    ('Admin'),
+    ('Secretary'),
+    ('Teacher');
 
+--DIPLOMADOS
 insert into diplomado (titulo,introduccion,objetivo,descripcion,horas,cursos,imagen) values 
     -- Número 1
     ('Ciencia de Datos Aplicada',NULL,
@@ -123,3 +130,84 @@ insert into diplomado (titulo,introduccion,objetivo,descripcion,horas,cursos,ima
     disertaciones, trabajos grupales, trabajos individuales, aplicaciones a una realidad concreta y 
     pruebas.',
     192,16,NULL);
+
+--DOCENTE
+insert into docente (nombre,id_diplomado) values 
+    ('Greyson Marquez',1),
+    ('Veronika Nielsen',1),
+    ('Jae Hines',2),
+    ('Heena Wickens',2),
+    ('Haya Berry',3),
+    ('Milo Bostock', 3),
+    ('Callum Howarth', 4),
+    ('Samia Barnes', 4),
+    ('Sneha Hays', 5),
+    ('Teodor Levine',5);
+
+--ROL_DOCENTE
+insert into rol_docente (descripcion,id_docente) values 
+    ('Coordinador',1),
+    ('Academico',2),
+    ('Profesional',3);
+
+--TITULO
+insert into titulo (nombre,descripcion,id_docente) values 
+    ('Doctorado en Ciencias de la Ingeniería con Mención Informática, Universidad de Santiago de Chile.','a',1),
+    ('Ingeniero Biomédico, Universidad de Valparaíso.','a',1),
+    ('Doctor en Ciencias de la Ingeniería con mención en Informática, Universidad de Santiago de Chile.','a',2),
+    ('Magíster en Ingeniería Informática, Universidad de Santiago de Chile.','a',2),
+    ('PhD in Communication, Information, and Library Studies, Rutgers University.','a',3),
+    ('Ingeniero Civil en Computación, Universidad de Chile.','a',4),
+    ('Ingeniero Civil, Universidad de Chile','a',5),
+    ('Magíster en Seguridad de la Información de la Universidad Central.','a',5),
+    ('Ingeniero Civil Electricista mención en Telecomunicaciones, Universidad de Santiago de Chile.','a',6),
+    ('Ingeniero Civil Informático, Universidad de Santiago de Chile.','a',7);
+
+--CARTA
+insert into carta (descripcion,id_docente,id_postulante) values 
+    ('Aceptado',1,1),
+    ('Rechazado',2,2),
+    ('En espera',2,3),
+    ('En espera',1,4),
+    ('Aceptado',6,5),
+    ('Aceptado',1,6),
+    ('Rechazado',3,7),
+    ('Aceptado',2,8),
+    ('En Espera',2,9),
+    ('Aceptado',1,10);
+
+--POSTULACION
+insert into postulacion (comentario,src_doc,id_postulante,id_diplomado) values 
+    ('sadgsadhgash',null,1,1),
+    ('ewrgfv',null,2,1),
+    ('adfhzxcvb',null,3,1),
+    ('cvxnb',null,4,3),
+    ('32547whfs',null,5,4),
+    ('adsfhadfh',null,6,5),
+    ('asy53df',null,7,1),
+    ('asdfhgv',null,8,2),
+    ('qwygh',null,9,3),
+    ('shnafdh',null,10,1),
+    ('qryfhsd',null,1,1),
+    ('qewry5247',null,2,3);
+
+
+--INFORMACION
+insert into informacion (nombre,contenido,id_diplomado) values 
+    ('Aranceles','-El valor total del diplomado asciende a $2.900.000 (valor año 2021, 1° Semestre).\n
+      -Derecho de inscripción por un valor de $63.000.\n
+      -Este diplomado no está adscrito a código SENCE.\n
+      -Este diplomado no está adscrito a convenio marco.',1);
+
+--USUARIO
+insert into usuario (email,password,id_docente,id_rol) values 
+    ('a@a.a','a',1,1),
+    ('Veronika@mlb.com','a',2,1),
+    ('Jae@e-recht24.de','a',3,1),
+    ('Heena@europa.eu','a',4,2),
+    ('Haya@miibeian.gov.cn','a',5,1),
+    ('Milo@google.es','a',6,3),
+    ('Samia@wiley.com','a',7,1),
+    ('Teodor@reference.com','a',8,3),
+    ('Sneha@facebook.com','a',9,2),
+    ('Teodor@aol.com','a',10,2);

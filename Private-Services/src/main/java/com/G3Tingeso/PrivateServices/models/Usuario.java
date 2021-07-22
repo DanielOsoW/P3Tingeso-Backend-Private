@@ -1,9 +1,9 @@
 package com.G3Tingeso.PrivateServices.models;
 
 /**
- * User
+ * Usuario
  */
-public class User {
+public class Usuario {
     private int id;
     private String email;
     private String password;
