@@ -4,31 +4,31 @@ import org.springframework.stereotype.Repository;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 import java.util.List;
-import com.G3Tingeso.PrivateServices.models.User;
+import com.G3Tingeso.PrivateServices.models.Usuario;
 
 /**
- * User_RepositoryImp
+ * Usuario_RepositoryImp
  */
 @Repository
-public class User_RepositoryImp implements User_Repository{
+public class Usuario_RepositoryImp implements Usuario_Repository{
     
     @Autowired
     private Sql2o sql2o;
 
     @Override
-    public int countUser() {
+    public int countUsuario() {
         int total = 0;
         try(Connection conn = sql2o.open()){
-            total = conn.createQuery("SELECT COUNT(*) FROM user").executeScalar(Integer.class);
+            total = conn.createQuery("SELECT COUNT(*) FROM usuario").executeScalar(Integer.class);
         }
         return total;
     }
 
     @Override
-    public List<User> getAllUsers() {
+    public List<Usuario> getAllUsuarios() {
         try(Connection conn = sql2o.open()){
-            return conn.createQuery("select * from user ORDER BY id")
-                    .executeAndFetch(User.class);
+            return conn.createQuery("select * from usuario ORDER BY id")
+                    .executeAndFetch(Usuario.class);
         } catch (Exception e) {
             System.out.println(e.getMessage());
             return null;
@@ -36,13 +36,13 @@ public class User_RepositoryImp implements User_Repository{
     }
 
     @Override
-    public User getUser(int id) {
-        String sql = "SELECT * FROM user where id=:id";
+    public Usuario getUsuario(int id) {
+        String sql = "SELECT * FROM usuario where id=:id";
 
 		try (Connection con = sql2o.open()) {
 			return con.createQuery(sql)
 				.addParameter("id", id)
-				.executeAndFetchFirst(User.class);
+				.executeAndFetchFirst(Usuario.class);
 		}catch(Exception e){
             System.out.println(e.getMessage());
             return null;
@@ -50,14 +50,14 @@ public class User_RepositoryImp implements User_Repository{
     }
 
     @Override
-    public boolean createUser(User user) {
+    public boolean createUsuario(Usuario usuario) {
         try(Connection conn = sql2o.open()){
-            conn.createQuery("insert into user (email,password,id_docente,id_rol)"+
+            conn.createQuery("insert into usuario (email,password,id_docente,id_rol)"+
             " values (:email,:password,:id_docente, :id_rol)", true)     
-                    .addParameter("email", user.getEmail())
-                    .addParameter("password", user.getPassword())
-                    .addParameter("id_docente", user.getId_docente())
-                    .addParameter("id_rol", user.getId_rol())
+                    .addParameter("email", usuario.getEmail())
+                    .addParameter("password", usuario.getPassword())
+                    .addParameter("id_docente", usuario.getId_docente())
+                    .addParameter("id_rol", usuario.getId_rol())
                     .executeUpdate().getKey();
             return true;      
         }catch(Exception e){
@@ -67,9 +67,9 @@ public class User_RepositoryImp implements User_Repository{
     }
 
     @Override
-    public boolean deleteUser(int id) {
+    public boolean deleteUsuario(int id) {
         try(Connection conn = sql2o.open()){
-            conn.createQuery("DELETE FROM user WHERE id = :id").addParameter("id", id)
+            conn.createQuery("DELETE FROM usuario WHERE id = :id").addParameter("id", id)
             .executeUpdate();
             return true; 
         }catch(Exception e){
@@ -79,8 +79,8 @@ public class User_RepositoryImp implements User_Repository{
     }
 
     @Override
-    public boolean updateUser(User user) {
-        String updateSql = "UPDATE user SET "+
+    public boolean updateUsuario(Usuario usuario) {
+        String updateSql = "UPDATE usuario SET "+
         "email = :email, "+
         "password = :password, "+
         "id_docente = :id_docente, "+
@@ -88,11 +88,11 @@ public class User_RepositoryImp implements User_Repository{
         "WHERE id = :id";
         try (Connection con = sql2o.open()) {   
             con.createQuery(updateSql)
-                .addParameter("id", user.getId())
-                .addParameter("email", user.getEmail())
-                .addParameter("password", user.getPassword())
-                .addParameter("id_docente", user.getId_docente())
-                .addParameter("id_rol", user.getId_rol())
+                .addParameter("id", usuario.getId())
+                .addParameter("email", usuario.getEmail())
+                .addParameter("password", usuario.getPassword())
+                .addParameter("id_docente", usuario.getId_docente())
+                .addParameter("id_rol", usuario.getId_rol())
                 .executeUpdate();
             return true;
         }catch(Exception e){
