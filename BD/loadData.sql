@@ -15,11 +15,13 @@ insert into diplomado (titulo,introduccion,objetivo,descripcion,horas,cursos,ima
     -- Número 1
     ('Ciencia de Datos Aplicada',NULL,
     -- Objetivo
-    'El programa tiene como objetivo general formar especialistas que sean capaces de aplicar las 
+    '# Objetivo
+    El programa tiene como objetivo general formar especialistas que sean capaces de aplicar las 
     técnicas y herramientas de análisis de datos, con rigurosidad y ética, con el fin de mejorar de 
     procesos para la toma de decisiones en diversas áreas de desempeño profesional.',
     -- Descripción
-    'El Diplomado en ciencia de datos aplicada entrega los conocimientos necesarios en el uso de 
+    '# Descripcion
+    El Diplomado en ciencia de datos aplicada entrega los conocimientos necesarios en el uso de 
     técnicas y herramientas de análisis de datos, con el fin de mejorar procesos de tomas de decisiones
      en diversas áreas de desempeño profesional. \n
     El programa busca por medio de un enfoque aplicado generar habilidades de programación, exploración
@@ -34,7 +36,8 @@ insert into diplomado (titulo,introduccion,objetivo,descripcion,horas,cursos,ima
     -- Número 2
     ('Ciberseguridad (Gestión,Técnico y Legal)',
     -- Introducción
-    'El Diplomado en Ciberseguridad entrega una visión integrada de lo que significa la Ciberseguridad 
+    '# Introduccion
+    El Diplomado en Ciberseguridad entrega una visión integrada de lo que significa la Ciberseguridad 
     para una organización en sus ámbitos técnico, gestión y legal. Este programa permitirá a los 
     participantes diseñar, implementar y aplicar técnicas y herramientas de ciberseguridad y hacking 
     ético que permitan proteger, monitorear, mantener y administrar la infraestructura TI y la 
@@ -43,7 +46,8 @@ insert into diplomado (titulo,introduccion,objetivo,descripcion,horas,cursos,ima
     Finalmente permitirá que los participantes logren entender, evaluar y aplicar las normativas legales
      aplicables a Ciberseguridad en la organización.',
     -- Objetivo 
-    'Contribuir al desarrollo y mejora de la Ciberseguridad, en aspectos de gestión, de técnicas y de
+    ' # Objetivo
+    Contribuir al desarrollo y mejora de la Ciberseguridad, en aspectos de gestión, de técnicas y de
      cuestiones legales, en organizaciones públicas y privadas del país, mediante la formación y 
      especialización de las y los profesionales partícipes de los distintos procesos de TICs, 
      permitiendo con ello aportar para tener organizaciones seguras y resilentes frente a riesgos y
@@ -57,7 +61,8 @@ insert into diplomado (titulo,introduccion,objetivo,descripcion,horas,cursos,ima
     -- Número 3
     ('Riesgo Operacional y Continuidad del Negocio en Procesos TICs',
     -- Introducción
-    'El riesgo es definido por la RAE como la “Contingencia o proximidad de un daño”. 
+    ' # Introducción
+    El riesgo es definido por la RAE como la “Contingencia o proximidad de un daño”. 
     Este concepto se encuentra presente en múltiples aspectos de la vida diaria de las personas y 
     empresas. La posibilidad de que algo dañino suceda es permanente y puede afectar directamente, 
     por ejemplo, su rendimiento financiero y la infraestructura tecnológica. Por lo tanto, la necesidad
@@ -76,7 +81,8 @@ insert into diplomado (titulo,introduccion,objetivo,descripcion,horas,cursos,ima
     27000, ISO 20000). Los encargados de las áreas relacionadas deben ser capaces de enfrentar estos 
     riesgos utilizando estas nuevas herramientas.',
     --Objetivo
-    'Comprender, analizar y aplicar los conceptos asociados al Riesgo Operacional, así como la Gestión
+    '# Objetivo
+    Comprender, analizar y aplicar los conceptos asociados al Riesgo Operacional, así como la Gestión
     de Continuidad del Negocio y de sus componentes principales (BCP y DRP) enfocado en los procesos 
     críticos del negocio y las TIC que apoyan dichos procesos.',
     --Descripcion
@@ -89,10 +95,12 @@ insert into diplomado (titulo,introduccion,objetivo,descripcion,horas,cursos,ima
     -- Número 4
     ('Control,Seguridad y Auditoría Computacional', NULL,
     --Objetivo
-    'Proporcionar a informáticos y auditores conocimientos que le permitan realizar actividades de
+    '# Objetivo
+    Proporcionar a informáticos y auditores conocimientos que le permitan realizar actividades de
      auditoría computacional y enfrentar problemas de seguridad de sistemas.',
     --Descripcion
-    'El diplomado desarrolla metodologías , procedimientos y técnicas que permitan auditar y mejorar 
+    '# Descripcion
+    El diplomado desarrolla metodologías , procedimientos y técnicas que permitan auditar y mejorar 
     a los estudiantes en la definición de políticas, construcción de planes y establecer criterios 
     para una adecuada gestión de la seguridad informática en las organizaciones. Adicionalmente, el 
     diplomado se enfoca en evaluar los riesgos que existen en la aplicación de las tecnologías de la
@@ -104,7 +112,8 @@ insert into diplomado (titulo,introduccion,objetivo,descripcion,horas,cursos,ima
      -- Número 5
     ('Peritaje Informático',NULL,NULL,
     --Descripcion
-    'El Diplomado está dirigido a abogados, ingenieros informáticos, auditores y oficiales de la 
+    ' # Descripcion
+    El Diplomado está dirigido a abogados, ingenieros informáticos, auditores y oficiales de la 
     Fuerzas Armadas o de Orden.\n
     Este diplomado tiene como objetivo preparar a profesionales relacionados con los procesos de la
     reforma al sistema de justicia nacional en temas informáticos que les permitan afrontar, con 
