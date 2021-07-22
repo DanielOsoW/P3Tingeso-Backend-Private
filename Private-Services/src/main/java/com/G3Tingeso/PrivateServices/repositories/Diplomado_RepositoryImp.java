@@ -68,14 +68,42 @@ public class Diplomado_RepositoryImp implements Diplomado_Repository {
 
     @Override
     public boolean deleteDiplomado(int id) {
-        // TODO Auto-generated method stub
-        return false;
+        try(Connection conn = sql2o.open()){
+            conn.createQuery("DELETE FROM diplomado WHERE id = :id").addParameter("id", id)
+            .executeUpdate();
+            return true; 
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+            return false;
+        }
     }
 
     @Override
     public boolean updateDiplomado(Diplomado diplomado) {
-        // TODO Auto-generated method stub
-        return false;
+        String updateSql = "UPDATE diplomado SET "+
+        "titulo = :titulo, "+
+        "introduccion = :introduccion, "+
+        "objetivo = :objetivo, "+
+        "descripcion = :descripcion, "+
+        "horas = :horas, "+
+        "cursos = :cursos, "+
+        "imagen = :imagen "+
+        "WHERE id = :id";
+        try (Connection con = sql2o.open()) {   
+            con.createQuery(updateSql)
+                .addParameter("titulo", diplomado.getTitulo())
+                .addParameter("introduccion", diplomado.getIntroduccion())
+                .addParameter("objetivo", diplomado.getObjetivo())
+                .addParameter("descripcion", diplomado.getDescripcion())
+                .addParameter("horas", diplomado.getHoras())
+                .addParameter("cursos", diplomado.getCursos())
+                .addParameter("imagen", diplomado.getImagen())
+                .executeUpdate();
+            return true;
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+            return false;
+        }
     }
 
 
