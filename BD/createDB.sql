@@ -2,6 +2,7 @@ drop database if exists diplomadosdb;
 create database diplomadosdb;
 \c diplomadosdb;
 
+SET CLIENT_ENCODING TO 'utf8';
 
 CREATE TABLE "diplomado" (
   "id" serial,
@@ -15,7 +16,7 @@ CREATE TABLE "diplomado" (
   PRIMARY KEY ("id")
 );
 
-CREATE TABLE "Información" (
+CREATE TABLE "informacion" (
   "id" serial,
   "nombre" varchar(100),
   "contenido" varchar(6000),
