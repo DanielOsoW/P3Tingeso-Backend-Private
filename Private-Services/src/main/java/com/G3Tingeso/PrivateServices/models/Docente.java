@@ -6,7 +6,7 @@ package com.G3Tingeso.PrivateServices.models;
 public class Docente {
     private int id;
     private String nombre;
-    private int id_diplomado;
+    private int id_rol_docente;
 
     public int getId() {
     	return this.id;
@@ -24,11 +24,11 @@ public class Docente {
     }
 
 
-    public int getId_diplomado() {
-    	return this.id_diplomado;
+    public int getId_rol_docente() {
+    	return this.id_rol_docente;
     }
-    public void setId_diplomado(int id_diplomado) {
-    	this.id_diplomado = id_diplomado;
+    public void setId_rol_docente(int id_rol_docente) {
+    	this.id_rol_docente = id_rol_docente;
     }
 
     
