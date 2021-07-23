@@ -1,3 +1,4 @@
+\c postgres
 drop database if exists diplomadosdb;
 create database diplomadosdb;
 \c diplomadosdb;
@@ -27,43 +28,63 @@ CREATE TABLE "informacion" (
       REFERENCES diplomado(id)
 );
 
-
 CREATE TABLE "rol" (
   "id" serial,
   "descripcion" varchar(20),
   PRIMARY KEY ("id")
 );
 
-CREATE TABLE "docente" (
-  "id" serial,
-  "nombre" varchar(100),
-  "id_diplomado" serial,
-  PRIMARY KEY ("id"),
-  CONSTRAINT fk_docente_diplomado
-    FOREIGN KEY(id_diplomado) 
-      REFERENCES diplomado(id)
-);
-
 CREATE TABLE "rol_docente" (
   "id" serial,
   "descripcion" varchar(50),
-  "id_docente" serial,
-  PRIMARY KEY ("id"),
-  CONSTRAINT fk_rol_docente_ddocente
-    FOREIGN KEY(id_docente) 
-      REFERENCES docente(id)
+  PRIMARY KEY ("id")
 );
+
+CREATE TABLE "docente" (
+  "id" serial,
+  "nombre" varchar(100),
+  "id_rol_docente" serial,
+  PRIMARY KEY ("id"),
+  CONSTRAINT fk_docente_rol_docente
+    FOREIGN KEY(id_rol_docente) 
+      REFERENCES rol_docente(id)
+);
+
+CREATE TABLE "diplomado_docente" (
+  "id" serial,
+  "id_docente" serial,
+  "id_diplomado" serial,
+  PRIMARY KEY ("id"),
+  CONSTRAINT fk_diplomado_docente_docente
+    FOREIGN KEY(id_docente) 
+      REFERENCES docente(id),
+  CONSTRAINT fk_diplomado_docente_diplomado
+    FOREIGN KEY(id_diplomado) 
+      REFERENCES diplomado(id)
+    
+);
+
 
 CREATE TABLE "titulo" (
   "id" serial,
   "nombre" varchar(100),
-  "descripcion" varchar(300),
-  "id_docente" serial,
-  PRIMARY KEY ("id"),
-  CONSTRAINT fk_titulo_docente
-    FOREIGN KEY(id_docente) 
-      REFERENCES docente(id)
+  PRIMARY KEY ("id")
 );
+
+CREATE TABLE "docente_titulo" (
+  "id" serial,
+  "id_docente" serial,
+  "id_titulo" serial,
+  PRIMARY KEY ("id"),
+  CONSTRAINT fk_docente_titulo_docente
+    FOREIGN KEY(id_docente) 
+      REFERENCES docente(id),
+  CONSTRAINT fk_docente_titulo_titulo
+    FOREIGN KEY(id_titulo) 
+      REFERENCES titulo(id)
+);
+
+
 
 CREATE TABLE "usuario" (
   "id" serial,
