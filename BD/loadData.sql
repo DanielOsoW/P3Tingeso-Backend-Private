@@ -17,6 +17,28 @@ insert into rol (descripcion) values
     ('Secretary'),
     ('Teacher');
 
+
+--ROL_DOCENTE
+insert into rol_docente (descripcion) values 
+    ('Coordinador'),
+    ('Academico'),
+    ('Profesional');
+
+--TITULO
+insert into titulo (nombre) values 
+    ('Doctorado en Ciencias de la Ingeniería con Mención Informática, Universidad de Santiago de Chile.'),
+    ('Ingeniero Biomédico, Universidad de Valparaíso.'),
+    ('Doctor en Ciencias de la Ingeniería con mención en Informática, Universidad de Santiago de Chile.'),
+    ('Magíster en Ingeniería Informática, Universidad de Santiago de Chile.'),
+    ('PhD in Communication, Information, and Library Studies, Rutgers University.'),
+    ('Ingeniero Civil en Computación, Universidad de Chile.'),
+    ('Ingeniero Civil, Universidad de Chile'),
+    ('Magíster en Seguridad de la Información de la Universidad Central.'),
+    ('Ingeniero Civil Electricista mención en Telecomunicaciones, Universidad de Santiago de Chile.'),
+    ('Ingeniero Civil Informático, Universidad de Santiago de Chile.');
+
+
+
 --DIPLOMADOS
 insert into diplomado (titulo,introduccion,objetivo,descripcion,horas,cursos,imagen) values 
     -- Número 1
@@ -132,36 +154,18 @@ insert into diplomado (titulo,introduccion,objetivo,descripcion,horas,cursos,ima
     192,16,NULL);
 
 --DOCENTE
-insert into docente (nombre,id_diplomado) values 
+insert into docente (nombre,id_rol_docente) values 
     ('Greyson Marquez',1),
     ('Veronika Nielsen',1),
     ('Jae Hines',2),
     ('Heena Wickens',2),
     ('Haya Berry',3),
     ('Milo Bostock', 3),
-    ('Callum Howarth', 4),
-    ('Samia Barnes', 4),
-    ('Sneha Hays', 5),
-    ('Teodor Levine',5);
+    ('Callum Howarth', 2),
+    ('Samia Barnes', 3),
+    ('Sneha Hays', 1),
+    ('Teodor Levine',3);
 
---ROL_DOCENTE
-insert into rol_docente (descripcion,id_docente) values 
-    ('Coordinador',1),
-    ('Academico',2),
-    ('Profesional',3);
-
---TITULO
-insert into titulo (nombre,descripcion,id_docente) values 
-    ('Doctorado en Ciencias de la Ingeniería con Mención Informática, Universidad de Santiago de Chile.','a',1),
-    ('Ingeniero Biomédico, Universidad de Valparaíso.','a',1),
-    ('Doctor en Ciencias de la Ingeniería con mención en Informática, Universidad de Santiago de Chile.','a',2),
-    ('Magíster en Ingeniería Informática, Universidad de Santiago de Chile.','a',2),
-    ('PhD in Communication, Information, and Library Studies, Rutgers University.','a',3),
-    ('Ingeniero Civil en Computación, Universidad de Chile.','a',4),
-    ('Ingeniero Civil, Universidad de Chile','a',5),
-    ('Magíster en Seguridad de la Información de la Universidad Central.','a',5),
-    ('Ingeniero Civil Electricista mención en Telecomunicaciones, Universidad de Santiago de Chile.','a',6),
-    ('Ingeniero Civil Informático, Universidad de Santiago de Chile.','a',7);
 
 --CARTA
 insert into carta (descripcion,id_docente,id_postulante) values 
@@ -211,3 +215,32 @@ insert into usuario (email,password,id_docente,id_rol) values
     ('Teodor@reference.com','a',8,3),
     ('Sneha@facebook.com','a',9,2),
     ('Teodor@aol.com','a',10,2);
+
+--DIPLOMADO_DOCENTE
+insert into diplomado_docente (id_docente,id_diplomado) values 
+    (1,1),
+    (2,1),
+    (3,1),
+    (4,3),
+    (5,4),
+    (6,5),
+    (7,1),
+    (8,2),
+    (9,3),
+    (10,1);
+
+--DOCENTE_TITULO
+insert into docente_titulo (id_docente,id_titulo) values 
+    (1,1),
+    (2,9),
+    (3,2),
+    (4,3),
+    (5,4),
+    (6,5),
+    (7,7),
+    (8,6),
+    (9,8),
+    (10,1),
+    (1,2),
+    (2,3);
+    

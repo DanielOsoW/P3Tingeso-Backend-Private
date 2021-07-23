@@ -52,10 +52,9 @@ public class Rol_docente_RepositoryImp implements Rol_docente_Repository{
     @Override
     public boolean createRol_docente(Rol_docente rol_docente) {
         try(Connection conn = sql2o.open()){
-            conn.createQuery("insert into rol_docente (descripcion,id_docente)"+
-            " values (:descripcion,:id_docente,)", true)     
+            conn.createQuery("insert into rol_docente (descripcion)"+
+            " values (:descripcion)", true)     
                     .addParameter("descripcion", rol_docente.getDescripcion())
-                    .addParameter("id_docente", rol_docente.getId_docente())
                     .executeUpdate().getKey();
             return true;      
         }catch(Exception e){
@@ -79,14 +78,12 @@ public class Rol_docente_RepositoryImp implements Rol_docente_Repository{
     @Override
     public boolean updateRol_docente(Rol_docente rol_docente) {
         String updateSql = "UPDATE rol_docente SET "+
-        "descripcion = :descripcion, "+
-        "id_docente = :id_docente "+
+        "descripcion = :descripcion "+
         "WHERE id = :id";
         try (Connection con = sql2o.open()) {   
             con.createQuery(updateSql)
                 .addParameter("id", rol_docente.getId())
                 .addParameter("descripcion", rol_docente.getDescripcion())
-                .addParameter("id_docente", rol_docente.getId_docente())
                 .executeUpdate();
             return true;
         }catch(Exception e){

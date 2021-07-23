@@ -52,10 +52,10 @@ public class Docente_RepositoryImp implements Docente_Repository{
     @Override
     public boolean createDocente(Docente docente) {
         try(Connection conn = sql2o.open()){
-            conn.createQuery("insert into docente (nombre,id_diplomado)"+
-            " values (:nombre,:id_diplomado)", true)     
+            conn.createQuery("insert into docente (nombre,id_rol_docente)"+
+            " values (:nombre,:id_rol_docente)", true)     
                     .addParameter("nombre", docente.getNombre())
-                    .addParameter("id_diplomado", docente.getId_diplomado())
+                    .addParameter("id_rol_docente", docente.getId_rol_docente())
                     .executeUpdate().getKey();
             return true;      
         }catch(Exception e){
@@ -80,13 +80,13 @@ public class Docente_RepositoryImp implements Docente_Repository{
     public boolean updateDocente(Docente docente) {
         String updateSql = "UPDATE docente SET "+
         "nombre = :nombre, "+
-        "id_diplomado = :id_diplomado "+
+        "id_rol_docente = :id_rol_docente "+
         "WHERE id = :id";
         try (Connection con = sql2o.open()) {   
             con.createQuery(updateSql)
                 .addParameter("id", docente.getId())
                 .addParameter("nombre", docente.getNombre())
-                .addParameter("id_diplomado", docente.getId_diplomado())
+                .addParameter("id_rol_docente", docente.getId_rol_docente())
                 .executeUpdate();
             return true;
         }catch(Exception e){

@@ -1,7 +1,5 @@
 package com.G3Tingeso.PrivateServices.models;
 
-import java.util.Properties;
-
 /**
  * Carta
  */
