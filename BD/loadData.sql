@@ -31,11 +31,13 @@ insert into titulo (nombre) values
     ('Doctor en Ciencias de la Ingeniería con mención en Informática, Universidad de Santiago de Chile.'),
     ('Magíster en Ingeniería Informática, Universidad de Santiago de Chile.'),
     ('PhD in Communication, Information, and Library Studies, Rutgers University.'),
+    ('Magíster en Seguridad de la Información de la Universidad Central.'),
+    ('Magíster en Ciencias de la Computación, Universidad de Chile.'),
     ('Ingeniero Civil en Computación, Universidad de Chile.'),
     ('Ingeniero Civil, Universidad de Chile'),
-    ('Magíster en Seguridad de la Información de la Universidad Central.'),
     ('Ingeniero Civil Electricista mención en Telecomunicaciones, Universidad de Santiago de Chile.'),
-    ('Ingeniero Civil Informático, Universidad de Santiago de Chile.');
+    ('Ingeniero Civil Informático, Universidad de Santiago de Chile.'),
+    ('Ingeniero de Ejecución en Computación e Informática, Universidad de Magallanes.');
 
 
 
