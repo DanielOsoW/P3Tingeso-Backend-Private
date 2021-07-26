@@ -32,21 +32,16 @@ pipeline {
             }
         }
 
-        stage('Levantar backend y frontend'){
+        stage('Crear imagen docker del backend privado'){
                 steps{
-                    parallel(
-                        a: {
-                            dir("/var/lib/jenkins/workspace/prueba1/backend"){			
-                                sh './gradlew build'
-                                sh 'java -jar ./build/libs/backend-0.0.1-SNAPSHOT.jar'
-                            }
-                        },
-                        b: {
-                            dir("/var/lib/jenkins/workspace/prueba1/front-end"){
-                                sh 'npm start'
-                            }
-                        }
-                    ) 
+                	dir("/var/lib/jenkins/workspace/private/Private-Services"){
+                       	 sh 'docker build -t backend Private-Services'
+                }             
+        }
+        stage('Subir imagen a docker hub'){
+                steps{
+                	dir("/var/lib/jenkins/workspace/private/Private-Services"){
+                       	 sh 'docker push backend'
                 }             
         }
         stage('Fin'){

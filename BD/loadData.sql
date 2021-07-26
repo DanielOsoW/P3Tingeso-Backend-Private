@@ -109,17 +109,72 @@ El programa contempla en su desarrollo, clases, magistrales, casos prácticos co
 
 --DOCENTE
 insert into docente (nombre,id_rol_docente) values 
-    ('Greyson Marquez',1),
-    ('Veronika Nielsen',1),
-    ('Jae Hines',2),
-    ('Heena Wickens',2),
-    ('Haya Berry',3),
-    ('Milo Bostock', 3),
-    ('Callum Howarth', 2),
-    ('Samia Barnes', 3),
-    ('Sneha Hays', 1),
-    ('Teodor Levine',3);
+    ('Alcides Quispes',1),
+    -- Primer diplomado
+    ('Manuel Villalobos-Cid',1),
+    ('Felipe-Andrés Bello Robles',1),
+    ('Carolina Bonacic Castro',2),
+    ('Diego Caro Alarcón',2),
+    ('Mario Inostroza Ponta',3),
+    ('Mauricio Marín Caihuán', 3),
+    ('Roberto González Ibáñez', 2), --8
+    -- Segundo diplomado
+    ('Eric Donders', 3), --9
+    ('Andrés Pumarino',1),
+    ('Daniel Pacheco Pacheco', 1),
+    ('Arturo Terra',3),--12
+    -- Tercer diplomado
+    ('Gonzalo Concha',1),--13
+    -- Cuarto diplomado
+    ('Juan Rodrigo Anabalón',1),--14
+    ('Claudio Ossa Rojas',2),
+    ('Waldo Gómez Román',2),
+    ('Julián Márquez López',3),--17
+    -- Quinto diplomado
+    ('Felipe Sánchez Fabres',1),--18
+    ('Gregorio Zaviezo',2),
+    ('Marcelo Huerta Miranda',2),
+    ('Carlos Lobos Medina',2),
+    ('Armando Muñoz Moreno',2)--22
 
+    ;
+
+--Diplomado-DOCENTE
+insert into diplomado_docente(id_diplomado,id_docente,coordinador) values 
+    -- Primer diplomado
+    (1,2,TRUE),
+    (1,3,false),
+    (1,4,false),
+    (1,5,false),
+    (1,6,false),
+    (1,7,false),
+    (1,8,false),
+    -- Segundo diplomado
+    (2,1,TRUE),
+    (2,9,false),
+    (2,10,false),
+    (2,11,false),
+    (2,12,false),
+    -- Tercer diplomado
+    (3,1,TRUE),
+    (3,9,false),
+    (3,12,false),
+    (3,13,false),
+    -- Cuarto diplomado
+    (4,1,TRUE),
+    (4,14,false),
+    (4,15,false),
+    (4,16,false),
+    (4,17,false),
+    -- Quinto diplomado
+    (5,1,TRUE),
+    (5,15,false),
+    (5,16,false),
+    (5,18,false),
+    (5,19,false),
+    (5,20,false),
+    (5,21,false),
+    (5,22,false);
 
 --CARTA
 insert into carta (descripcion,id_docente,id_postulante) values 
@@ -169,19 +224,6 @@ insert into usuario (email,password,id_docente,id_rol) values
     ('Teodor@reference.com','a',8,3),
     ('Sneha@facebook.com','a',9,2),
     ('Teodor@aol.com','a',10,2);
-
---DIPLOMADO_DOCENTE
-insert into diplomado_docente (id_docente,id_diplomado) values 
-    (1,1),
-    (2,1),
-    (3,1),
-    (4,3),
-    (5,4),
-    (6,5),
-    (7,1),
-    (8,2),
-    (9,3),
-    (10,1);
 
 --DOCENTE_TITULO
 insert into docente_titulo (id_docente,id_titulo) values 

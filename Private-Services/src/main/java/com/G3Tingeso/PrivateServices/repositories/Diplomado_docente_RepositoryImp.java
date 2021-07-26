@@ -49,10 +49,11 @@ public class Diplomado_docente_RepositoryImp implements Diplomado_docente_Reposi
     @Override
     public boolean createDiplomado_docente(Diplomado_docente diplomado_docente) {
         try(Connection conn = sql2o.open()){
-            conn.createQuery("insert into diplomado_docente (id_docente,id_diplomado)"+
-            " values (:id_docente,:id_diplomado)", true)     
+            conn.createQuery("insert into diplomado_docente (id_docente,id_diplomado,coordinador)"+
+            " values (:id_docente,:id_diplomado,:coordinador)", true)     
                     .addParameter("id_docente", diplomado_docente.getId_docente())
                     .addParameter("id_diplomado", diplomado_docente.getId_diplomado())
+                    .addParameter("coordinador", diplomado_docente.isCoordinador())
                     .executeUpdate().getKey();
             return true;      
         }catch(Exception e){
@@ -78,12 +79,14 @@ public class Diplomado_docente_RepositoryImp implements Diplomado_docente_Reposi
         String updateSql = "UPDATE diplomado_docente SET "+
         "id_docente = :id_docente, "+
         "id_diplomado = :id_diplomado "+
+        "coordinador = :coordinador" +
         "WHERE id = :id";
         try (Connection con = sql2o.open()) {   
             con.createQuery(updateSql)
                 .addParameter("id", diplomado_docente.getId())
                 .addParameter("id_docente", diplomado_docente.getId_docente())
                 .addParameter("id_diplomado", diplomado_docente.getId_diplomado())
+                .addParameter("coordinador" , diplomado_docente.isCoordinador())
                 .executeUpdate();
             return true;
         }catch(Exception e){

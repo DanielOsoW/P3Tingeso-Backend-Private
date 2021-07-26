@@ -52,6 +52,7 @@ CREATE TABLE "docente" (
 
 CREATE TABLE "diplomado_docente" (
   "id" serial,
+  "coordinador" boolean,
   "id_docente" serial,
   "id_diplomado" serial,
   PRIMARY KEY ("id"),
