@@ -31,6 +31,10 @@ public class DiplomadoService {
     public List<Diplomado> getAllDiplomado(){
         return DiplomadoRepository.getAllDiplomados();
     }
+    @GetMapping("/diplomadosfull")
+    public List<Diplomado> getAllDiplomadoFull(){
+        return DiplomadoRepository.getAllDiplomadosFull();
+    }
     
     @GetMapping("/diplomados/{id}")
     public Diplomado getDiplomado(@PathVariable int id){

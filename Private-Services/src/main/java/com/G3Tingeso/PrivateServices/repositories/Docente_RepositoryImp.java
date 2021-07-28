@@ -14,7 +14,6 @@ public class Docente_RepositoryImp implements Docente_Repository{
     
     @Autowired
     private Sql2o sql2o;
-
     @Override
     public int countDocente() {
         int total = 0;

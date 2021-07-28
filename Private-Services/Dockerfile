@@ -1,17 +1,9 @@
-FROM openjdk:15.0.1-oracle
-
-COPY . .
-
-RUN chmod +x ./gradlew
-
-RUN ./gradlew build
-
-COPY . .
-
-COPY docker-entrypoint.sh /
-
-RUN chmod +x docker-entrypoint.sh
-
-ENTRYPOINT ["bash","docker-entrypoint.sh"]
-
+FROM openjdk:8-jdk-alpine
+VOLUME /tmp
 EXPOSE 3000
+RUN mkdir -p /app/
+RUN mkdir -p /app/logs/
+ADD target/demo-0.0.1-SNAPSHOT.jar /app/app.jar
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-Dspring.profiles.active=container", "-jar", "/app/app.jar"]
+
+

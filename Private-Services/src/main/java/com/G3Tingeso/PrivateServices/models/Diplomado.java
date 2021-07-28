@@ -1,5 +1,7 @@
 package com.G3Tingeso.PrivateServices.models;
 
+import java.util.List;
+
 public class Diplomado {
     private int id;
     private String titulo;
@@ -9,8 +11,22 @@ public class Diplomado {
     private int horas;
     private int cursos;
     private String imagen;
+    private List <Docente> docentes;
+    private Docente coordinador;
 
     public int getId() {return id;}
+    public Docente getCoordinador() {
+        return coordinador;
+    }
+    public void setCoordinador(Docente coordinador) {
+        this.coordinador = coordinador;
+    }
+    public List <Docente> getDocentes() {
+        return docentes;
+    }
+    public void setDocentes(List <Docente> docentes) {
+        this.docentes = docentes;
+    }
     public String getDescripcion() {return descripcion;}
     public void setDescripcion(String descripcion) {this.descripcion = descripcion;}
     public String getImagen() {return imagen;}
