@@ -44,6 +44,12 @@ pipeline {
                        	 sh 'docker push backend'
                 }             
         }
+        stage('Subir imagen a docker hub'){
+                steps{
+                	dir("/var/lib/jenkins/workspace/private/Private-Services"){
+                       	 sh ' sudo docker run -p 3000:3000  --network host backend2:latest'
+                }             
+        }
         stage('Fin'){
                 steps{
                     echo "Terminado"
