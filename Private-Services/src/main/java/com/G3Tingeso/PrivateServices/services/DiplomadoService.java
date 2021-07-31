@@ -30,8 +30,7 @@ public class DiplomadoService {
     @GetMapping("/diplomados")
     public List<Diplomado> getAllDiplomado(){
         return DiplomadoRepository.getAllDiplomados();
-    }
-    
+    }    
     @GetMapping("/diplomados/{id}")
     public Diplomado getDiplomado(@PathVariable int id){
         return DiplomadoRepository.getDiplomado(id);

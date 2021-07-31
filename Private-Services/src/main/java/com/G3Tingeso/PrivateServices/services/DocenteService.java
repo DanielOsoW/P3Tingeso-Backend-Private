@@ -60,4 +60,14 @@ public class DocenteService {
          return DocenteRepository.updateDocente(Docente);
     }
 
+    @GetMapping("/docentes/coordinador/{id}")
+    public List<Docente> getCoordinador(@PathVariable int id){
+        return DocenteRepository.getCoordinadores(id);
+    }
+
+    @GetMapping("/docentes/diplomado/{id}")
+    public List<Docente> getDocentes(@PathVariable int id){
+        return DocenteRepository.getDocentes(id);
+    }
+
 }

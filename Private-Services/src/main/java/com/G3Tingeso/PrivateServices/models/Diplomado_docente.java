@@ -8,11 +8,20 @@ public class Diplomado_docente {
     private int id;
     private int id_docente;
     private int id_diplomado;
+    private boolean coordinador;
 
     /**
      * @return int return the id
      */
     public int getId() {return id;}
+
+    public boolean isCoordinador() {
+        return coordinador;
+    }
+
+    public void setCoordinador(boolean coordinador) {
+        this.coordinador = coordinador;
+    }
 
     /**
      * @param id the id to set

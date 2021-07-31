@@ -7,9 +7,16 @@ public class Docente {
     private int id;
     private String nombre;
     private int id_rol_docente;
+    private Titulo[] titulos;
 
     public int getId() {
     	return this.id;
+    }
+    public Titulo[] getTitulos() {
+        return titulos;
+    }
+    public void setTitulos(Titulo[] titulos) {
+        this.titulos = titulos;
     }
     public void setId(int id) {
     	this.id = id;

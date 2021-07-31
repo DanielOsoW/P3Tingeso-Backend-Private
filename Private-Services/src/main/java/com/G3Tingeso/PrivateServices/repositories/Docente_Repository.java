@@ -12,5 +12,7 @@ public interface Docente_Repository {
     public boolean deleteDocente(int id);
     public boolean updateDocente(Docente docente);
     public Docente getDocente(int id);
+    public List<Docente> getCoordinadores(int id_diplomado);
+    public List<Docente> getDocentes(int id_diplomado);
     
 }

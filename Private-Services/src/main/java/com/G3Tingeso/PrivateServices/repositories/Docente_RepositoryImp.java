@@ -14,7 +14,6 @@ public class Docente_RepositoryImp implements Docente_Repository{
     
     @Autowired
     private Sql2o sql2o;
-
     @Override
     public int countDocente() {
         int total = 0;
@@ -92,6 +91,36 @@ public class Docente_RepositoryImp implements Docente_Repository{
         }catch(Exception e){
             System.out.println(e.getMessage());
             return false;
+        }
+    }
+
+    @Override
+    public List<Docente> getCoordinadores(int id_diplomado) {
+        String getCoordinadores  = 
+        "select docente.nombre,docente.id " + 
+        "from docente, diplomado_docente " + 
+        "WHERE diplomado_docente.id_diplomado = +" + id_diplomado +  " and diplomado_docente.id_docente = docente.id and diplomado_docente.coordinador=true";
+        try (Connection con = sql2o.open()) {   
+            return con.createQuery(getCoordinadores)
+                .executeAndFetch(Docente.class);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    @Override
+    public List<Docente> getDocentes(int id_diplomado) {
+        String getCoordinadores  = 
+        "select docente.nombre,docente.id " + 
+        "from docente, diplomado_docente " + 
+        "WHERE diplomado_docente.id_diplomado = +" + id_diplomado +  " and diplomado_docente.id_docente = docente.id";
+        try (Connection con = sql2o.open()) {   
+            return con.createQuery(getCoordinadores)
+                .executeAndFetch(Docente.class);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+            return null;
         }
     }
 

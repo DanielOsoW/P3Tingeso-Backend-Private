@@ -12,5 +12,6 @@ public interface Titulo_Repository {
     public boolean deleteTitulo(int id);
     public boolean updateTitulo(Titulo titulo);
     public Titulo getTitulo(int id);
+    public List<Titulo> getTitulosDocente(int id);
     
 }
