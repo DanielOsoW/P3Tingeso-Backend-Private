@@ -59,5 +59,9 @@ public class TituloService {
     public boolean updateTitulo(@RequestBody Titulo Titulo){
          return TituloRepository.updateTitulo(Titulo);
     }
-  
+    
+    @GetMapping("/titulos/docente/{id}")
+    public List<Titulo> getTitulosDocente(@PathVariable int id){
+        return TituloRepository.getTitulosDocente(id);
+    }
 }

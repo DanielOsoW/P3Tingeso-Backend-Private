@@ -14,6 +14,7 @@ CREATE TABLE "diplomado" (
   "horas" int,
   "cursos" int,
   "imagen" varchar(1000),
+  "arancel" int,
   PRIMARY KEY ("id")
 );
 
@@ -68,7 +69,7 @@ CREATE TABLE "diplomado_docente" (
 
 CREATE TABLE "titulo" (
   "id" serial,
-  "nombre" varchar(100),
+  "nombre" varchar(200),
   PRIMARY KEY ("id")
 );
 

@@ -26,23 +26,61 @@ insert into rol_docente (descripcion) values
 
 --TITULO
 insert into titulo (nombre) values 
-    ('Doctorado en Ciencias de la Ingeniería con Mención Informática, Universidad de Santiago de Chile.'),
-    ('Ingeniero Biomédico, Universidad de Valparaíso.'),
-    ('Doctor en Ciencias de la Ingeniería con mención en Informática, Universidad de Santiago de Chile.'),
-    ('Magíster en Ingeniería Informática, Universidad de Santiago de Chile.'),
-    ('PhD in Communication, Information, and Library Studies, Rutgers University.'),
-    ('Magíster en Seguridad de la Información de la Universidad Central.'),
-    ('Magíster en Ciencias de la Computación, Universidad de Chile.'),
-    ('Ingeniero Civil en Computación, Universidad de Chile.'),
-    ('Ingeniero Civil, Universidad de Chile'),
-    ('Ingeniero Civil Electricista mención en Telecomunicaciones, Universidad de Santiago de Chile.'),
-    ('Ingeniero Civil Informático, Universidad de Santiago de Chile.'),
-    ('Ingeniero de Ejecución en Computación e Informática, Universidad de Magallanes.');
+    ('Doctorado en Ciencias de la Ingeniería con Mención Informática, Universidad de Santiago de Chile.'), --Manu Felipe
+    ('Ingeniero Biomédico, Universidad de Valparaíso.'), --2 Manu
+    ('Magíster en Ingeniería Informática, Universidad de Santiago de Chile.'), -- 3 Felipe Mario Robert
+    ('Ingeniero Civil Informático, Universidad de Santiago de Chile.'),--4 Felipe Mario Robert Lobos 
+    ('PhD in Computer Science, Universidad Complutense de Madrid.'),  --Caro 
+    ('Magíster en Ciencias de la Computación, Universidad de Chile.'), --6 --Caro Mauri
+    ('Ingeniero de Ejecución en Computación e Informática, Universidad de Magallanes.'), --7 Caro
+    ('Doctor en Ciencias de la Computación, Universidad de Concepción..'), --8 Diego 
+    ('Ingeniero Civil Informático, Universidad de Concepción.'),--9 Diego 
+    ('PhD in Computer Science, The University of Newcastle.'),-- 10 Mario
+    ('PhD in Computer Science, University of Oxford.'), --11 Mauri
+    ('Ingeniero de Ejecución en Electricidad, Universidad de Magallanes. '),--12 Mauri
+    ('PhD in Communication, Information, and Library Studies, Rutgers University.'), --13 Robert
+    ('Magíster en Seguridad de la Información de la Universidad Central.'), --14 Eric
+    ('Ingeniero Civil en Computación, Universidad de Chile.'),--15 Eric
+    ('Magíster en Negocios, Universidad Adolfo Ibañez'), --16 Andres
+    ('Postítulo en Derecho Informático y de las Telecomunicaciones, Universidad de Chile'), --17 Andres
+    ('Abogado, Universidad Adolfo Ibáñez'), --18 Andres
+    ('Magíster en Seguridad, Peritaje y Auditoría en Procesos Informáticos, Universidad de Santiago'), --19 Daniel Juanrorro
+    ('Instructor Trainer, Cisco Networking Academy'), --20 Daniel
+    ('Ingeniero en Telecomunicaciones, Inacap'), --21 Daniel
+    ('Ingeniero Civil, Universidad de Chile'), --22 Arturo
+    ('Diplomado en Gestión y Marketing, Universidad Adolfo Ibáñez.'), --23 Arturo 
+    ('Magíster en Tecnologías de la Informacíón, Universidad Técnica Federico Santa María.'), --24 Gonza
+    ('Ingeniero Civil Electricista mención en Telecomunicaciones, Universidad de Santiago de Chile.'), --25 Gonza 
+    ('Diplomado en Control, Seguridad y Auditoría Informática. Universidad de Santiago de Chile.'), --26 Juanrorro  Waldo georgy Armando 
+    ('Diplomado en Peritaje Informático. Universidad de Santiago de Chile.'), --27 Juanrorro Waldo  georgy
+    ('Licenciado en Ciencias de la Ingeniería. Universidad de las Américas.'), --28 Juanrorro
+    ('Ingeniero de Ejecución en Informática. Universidad de las Américas.'), --29 Juanrorro
+    ('Abogado, Universidad de Chile.'), --30 Ossa
+    ('Diplomado en Estado de Derecho y Reformas a la Justicia, Universidad de Chile.'), --31 Ossa
+    ('Ingeniero de Ejecución Industrial, Universidad Andrés Bello.'), --32 Waldo 
+    ('Ingeniero en Gestión de Empresas, Universidad Diego Portales.'), --33 Waldo 
+    ('Ingeniero Electrónico y de Telecomunicaciones, Universidad San Martín – Colombia'), --34 Julián 
+    ('CISA (Certified Information Systems Auditor)'), --35 Julián 
+    ('CRISC (Certified Risk in Information Systems and Controls)'), --36 Julián 
+    ('Perito Informático, Academia Superior de Estudios Policiales, Policía de Investigaciones de Chile.'), --37 Felipe
+    ('Diplomado en Criminalística y Metodología Forense, Universidad de Valparaíso.'), --38 Felipe
+    ('Ingeniero Comercial, mención Informática, Universidad de Santiago de Chile.'), --39 georgy
+    ('Licenciado en Ciencias Jurídicas y Sociales, Universidad Las Condes. Título de Abogado.'), --40 Marcelo 
+    ('Magíster en Derecho Público con Mención en Derecho Constitucional, Universidad Católica de Chile.'), --41 Marcelo 
+    ('Diplomado en Auditoría de Sistemas, Universidad de Chile.'), --42 Lobos 
+    ('Diplomado en Seguridad Computacional, Universidad de Chile.'), --43 Lobos 
+    ('Licenciado en Ciencias de la Investigación Criminalística, Academia Superior de Ciencias Policiales, PDI.'), --44 Armando 
+    ('Creador y ex jefe de la Brigada Investigadora del Ciber Crimen (Bricib) de la PDI.'), --45 Armando 
+    ('Prefecto ® de la Policía de Investigaciones de Chile.'), --46 Armando 
+    ('Licenciado en Comunicación Publicitaria, Mención Gestión Creativa, Universidad de Santiago de Chile.'), --47 Armando 
+    ('Magíster en Didáctica para la Educación Superior, Universidad de Tarapacá.'), --48 Armando 
+    ('Doctor en Comunicación, Universidad de Artes, Ciencias y Comunicación.') --49 Armando 
+    ;
 
 
 
 --DIPLOMADOS
-insert into diplomado (titulo,introduccion,objetivo,descripcion,horas,cursos,imagen) values 
+insert into diplomado (titulo,introduccion,objetivo,descripcion,horas,cursos,imagen,arancel) values 
     -- Número 1
     ('Ciencia de Datos Aplicada',NULL,
     -- Objetivo
@@ -54,7 +92,7 @@ El programa busca por medio de un enfoque aplicado generar habilidades de progra
 
 El diplomado está estructurado en 6 módulos y tiene una duración de 180 horas cronológicas con 120 horas de docencia directa.',
     -- Horas, cursos e imagen
-    180,6,NULL),
+    180,6,NULL,2900000),
 
 
     -- Número 2
@@ -68,7 +106,7 @@ Finalmente permitirá que los participantes logren entender, evaluar y aplicar l
     -- Descripción
     NULL,
     -- Horas, cursos e imagen
-    105,7,NULL),
+    105,7,NULL,3150000),
 
 
     -- Número 3
@@ -84,7 +122,7 @@ La desregulación y la globalización de los servicios financieros, junto con la
     --Descripcion
     NULL ,
     -- Horas, cursos e imagen
-    108,9,NULL
+    108,9,NULL,2745000
     ),
     
 
@@ -95,7 +133,7 @@ La desregulación y la globalización de los servicios financieros, junto con la
     --Descripcion
     'El diplomado desarrolla metodologías , procedimientos y técnicas que permitan auditar y mejorar a los estudiantes en la definición de políticas, construcción de planes y establecer criterios para una adecuada gestión de la seguridad informática en las organizaciones. Adicionalmente, el diplomado se enfoca en evaluar los riesgos que existen en la aplicación de las tecnologías de la información. Finalmente se abordan procedimientos y controles que permitan disminuir o evitar el impacto de los riesgos.',
     -- Horas, cursos e imagen
-    120,10,NULL
+    120,10,NULL,2680000 
 ),
      -- Número 5
     ('Peritaje Informático',NULL,NULL,
@@ -105,7 +143,7 @@ La desregulación y la globalización de los servicios financieros, junto con la
 Este diplomado tiene como objetivo preparar a profesionales relacionados con los procesos de la reforma al sistema de justicia nacional en temas informáticos que les permitan afrontar, con conocimientos adecuados, las exigencias de esta nueva disciplina en el ámbito legislativo, judicial y policial.
 
 El programa contempla en su desarrollo, clases, magistrales, casos prácticos como teóricos, disertaciones, trabajos grupales, trabajos individuales, aplicaciones a una realidad concreta y pruebas.',
-    192,16,NULL);
+    192,16,NULL,3861000);
 
 --DOCENTE
 insert into docente (nombre,id_rol_docente) values 
@@ -227,16 +265,100 @@ insert into usuario (email,password,id_docente,id_rol) values
 
 --DOCENTE_TITULO
 insert into docente_titulo (id_docente,id_titulo) values 
-    (1,1),
-    (2,9),
-    (3,2),
-    (4,3),
-    (5,4),
-    (6,5),
-    (7,7),
-    (8,6),
-    (9,8),
-    (10,1),
-    (1,2),
-    (2,3);
+    -- Manuel Villalobos-Cid id : 2
+    (2,1),
+    (2,2),
+    -- Felipe-Andrés Bello Robles  id : 3
+    (3,1),
+    (3,3),
+    (3,4),
+    -- Carolina Bonacic Castro id : 4
+    (4,5),
+    (4,6),
+    (4,7),
+    -- Diego Caro Alarcón id : 5
+    (5,8),
+    (5,9),    
+    -- Mario Inostroza Ponta id : 6
+    (6,10),
+    (6,3),
+    (6,4),
+    -- Mauricio Marín Caihuán
+    (7,11),
+    (7,6),
+    (7,12),
+    -- Roberto González Ibáñez
+    (8,13),
+    (8,3),
+    (8,4),
+    --SEGUNDO DIPLOMADO
+    
+    -- Eric Donders
+    (9,14),
+    (9,15),
+    -- Andrés Pumarino
+    (10,16),
+    (10,17),
+    (10,18),
+    -- Daniel Pacheco Pacheco
+    (11,19),
+    (11,20),
+    (11,21),
+    -- Arturo Terra
+    (12,22),
+    (12,23),
+    --TERCER DIPLOMADO
+
+     -- Gonzalo Concha
+    (13,24),
+    (13,25),
+    --CUARTO DIPLOMADO
+    
+    -- Juan Rodrigo Anabalón
+    (14,19),
+    (14,26),
+    (14,27),
+    (14,28),      
+    (14,29),
+    -- Claudio Ossa Rojas
+    (15,30),
+    (15,31),
+    -- Waldo Gómez Román
+    (16,32),
+    (16,33),
+    (16,26),
+    (16,27),
+    -- Julián Márquez López
+    (17,34),
+    (17,35),
+    (17,36),
+
+    -- Quinto diplomado
+
+    -- Felipe Sánchez Fabres
+    (18,7),
+    (18,26),
+    (18,27),
+    (18,37),
+    (18,38),
+    -- Gregorio Zaviezo
+    (19,39),
+    (19,26),
+    (19,27),
+    -- Marcelo Huerta Miranda
+    (20,40),
+    (20,41),
+    -- Carlos Lobos Medina
+    (21,4),
+    (21,42),
+    (21,43),
+    -- Armando Muñoz Moreno
+    (22,44),
+    (22,45),
+    (22,46),
+    (22,26),
+    (22,47),
+    (22,48),
+    (22,49)
+  ;
     

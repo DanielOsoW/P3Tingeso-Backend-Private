@@ -11,10 +11,17 @@ public class Diplomado {
     private int horas;
     private int cursos;
     private String imagen;
+    private int arancel;
     private List <Docente> docentes;
     private Docente coordinador;
 
     public int getId() {return id;}
+    public int getArancel() {
+        return arancel;
+    }
+    public void setArancel(int arancel) {
+        this.arancel = arancel;
+    }
     public Docente getCoordinador() {
         return coordinador;
     }

@@ -92,5 +92,16 @@ public class Titulo_RepositoryImp implements Titulo_Repository{
         }
     }
 
+    @Override
+    public List<Titulo> getTitulosDocente(int id) {
+        try(Connection conn = sql2o.open()){
+            return conn.createQuery("select t.* from titulo t, docente_titulo dt, docente d where t.id = dt.id_titulo and dt.id_docente = d.id and d.id = " + id)
+                    .executeAndFetch(Titulo.class);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
     
 }
