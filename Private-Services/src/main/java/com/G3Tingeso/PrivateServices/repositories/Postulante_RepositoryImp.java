@@ -95,5 +95,17 @@ public class Postulante_RepositoryImp implements Postulante_Repository  {
         }
     }
 
+    @Override
+    public List<Postulante> getPostulantesByDiplomado(int id) {
+        try(Connection conn = sql2o.open()){
+            return conn.createQuery("select * from postulante pt, postulacion pn, diplomado d WHERE pn.id_postulante=pt.id AND pn.id_diplomado=d.id id=:id")
+                    .addParameter("id", id)
+                    .executeAndFetch(Postulante.class);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
 
 }
