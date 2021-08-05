@@ -34,7 +34,7 @@ pipeline {
 	stage('Correr imagen'){
                 steps{
         		dir("/var/lib/jenkins/workspace/BackendPrivate/Private-Services"){
-				sh 'sudo docker run --rm --name backend -d -p 3000:3000  --network host backend:latest'
+				sh 'docker run --rm --name backend -d -p 3000:3000  --network host backend:latest'
 	         	}
                 }             
         }
