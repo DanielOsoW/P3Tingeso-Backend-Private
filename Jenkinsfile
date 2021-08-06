@@ -6,7 +6,7 @@ pipeline {
                 echo "Iniciando"
             } 
         }
-	stage('stop imagen docker if exist'){
+	stage('Parar imagen anterior'){
 		
                 steps{
 		
@@ -25,17 +25,17 @@ pipeline {
 	         	}
                 }             
         }
-	stage('Subir imagen docker a hub'){
-                steps{
-        		dir("/var/lib/jenkins/workspace/BackendPrivate/Private-Services"){
-	         	}
-                }             
-        }
 	stage('Correr imagen'){
                 steps{
         		dir("/var/lib/jenkins/workspace/BackendPrivate/Private-Services"){
 				sh 'docker run --rm --name backend -d -p 3000:3000  --network host backend:latest'
 	         	}
+                }             
+        }
+	stage('Subir imagen docker a hub'){
+                steps{
+			sh 'docker tag backend ducktales10969/backend:latest'	
+			sh 'docker push ducktales10969/backend:latest'
                 }             
         }
         stage('Fin'){
