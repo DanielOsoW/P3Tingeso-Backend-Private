@@ -38,9 +38,9 @@ public class PostulanteService {
     }
 
     @GetMapping("/postulantes/count")
-    public String countPostulante(){
+    public int countPostulante(){
         int total = PostulanteRepository.countPostulante();
-        return String.format("Tienes en total, %s de la lista.", total);
+        return total;
     }
 
     @PostMapping("/postulantes/create")
