@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d23f70cc-89b2-49ba-bddc-a16e31168995" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Private-Services/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Private-Services/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Private-Services/src/main/java/com/G3Tingeso/PrivateServices/repositories/Usuario_Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Private-Services/src/main/java/com/G3Tingeso/PrivateServices/repositories/Usuario_Repository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Private-Services/src/main/java/com/G3Tingeso/PrivateServices/repositories/Usuario_RepositoryImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/Private-Services/src/main/java/com/G3Tingeso/PrivateServices/repositories/Usuario_RepositoryImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Private-Services/src/main/java/com/G3Tingeso/PrivateServices/services/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Private-Services/src/main/java/com/G3Tingeso/PrivateServices/services/UsuarioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Private-Services/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Private-Services/src/main/resources/application.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/Private-Services">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Privat-Service" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1wPqIRbpcEuxqW6rFKQpA7f67gY" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="gradle bootrun" />
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Private-Services [bootrun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Private-Services" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--scan" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="bootrun" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.Private-Services [bootrun]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d23f70cc-89b2-49ba-bddc-a16e31168995" name="Default Changelist" comment="" />
+      <created>1628370491152</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1628370491152</updated>
+    </task>
+    <servers />
+  </component>
+</project>
