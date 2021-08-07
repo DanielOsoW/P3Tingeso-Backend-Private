@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d23f70cc-89b2-49ba-bddc-a16e31168995" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Private-Services/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Private-Services/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Private-Services/src/main/java/com/G3Tingeso/PrivateServices/repositories/Usuario_Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Private-Services/src/main/java/com/G3Tingeso/PrivateServices/repositories/Usuario_Repository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Private-Services/src/main/java/com/G3Tingeso/PrivateServices/repositories/Usuario_RepositoryImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/Private-Services/src/main/java/com/G3Tingeso/PrivateServices/repositories/Usuario_RepositoryImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Private-Services/src/main/java/com/G3Tingeso/PrivateServices/services/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Private-Services/src/main/java/com/G3Tingeso/PrivateServices/services/UsuarioService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Private-Services/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Private-Services/src/main/resources/application.properties" afterDir="false" />
-    </list>
+    <list default="true" id="d23f70cc-89b2-49ba-bddc-a16e31168995" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
