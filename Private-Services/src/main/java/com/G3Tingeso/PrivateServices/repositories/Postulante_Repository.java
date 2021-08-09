@@ -9,4 +9,5 @@ public interface Postulante_Repository {
     public boolean deletePostulante(int id);
     public boolean updatePostulante(Postulante postulante);
     public Postulante getPostulante(int id);
+    public List<Postulante> getPostulantesByDiplomado(int id);
 }
