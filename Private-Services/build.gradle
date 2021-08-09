@@ -4,21 +4,23 @@ plugins {
 	id 'java'
 }
 
-group = 'cl.tbd'
+group = 'com.G3Tingeso'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
+sourceCompatibility = '11'
 
 repositories {
 	mavenCentral()
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-web:2.5.3'
 	compile group: 'org.sql2o', name: 'sql2o', version: '1.6.0'
-	compile 'org.postgresql:postgresql:42.2.5'
-	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+	compile 'org.postgresql:postgresql:42.2.23.jre7'
+	testImplementation('org.springframework.boot:spring-boot-starter-test:2.5.3') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
+	testImplementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
+	testImplementation 'org.junit.jupiter:junit-jupiter:5.7.2'
 }
 
 test {
