@@ -1,10 +1,20 @@
 package com.G3Tingeso.PrivateServices.repositories;
+import java.sql.Date;
+import java.time.Instant;
+import java.util.HashMap;
+import javax.crypto.SecretKey;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 import java.util.List;
 import com.G3Tingeso.PrivateServices.models.Usuario;
+
+import io.jsonwebtoken.JwtBuilder;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.security.Keys;
 
 /**
  * Usuario_RepositoryImp
@@ -49,6 +59,57 @@ public class Usuario_RepositoryImp implements Usuario_Repository{
         }
     }
 
+    public Usuario autenticarUsuario(String email, String password) {
+        String sql = "SELECT * FROM usuario WHERE email= :email AND password= :password";
+        try (Connection con = sql2o.open()) {
+            return con.createQuery(sql)
+                    .addParameter("email", email)
+                    .addParameter("password", password)
+                    .executeAndFetchFirst(Usuario.class);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    @Override
+    public String getLogin(String email, String password) {
+        Usuario usuario = autenticarUsuario(email, password);
+        if (usuario != null) {
+            try (Connection con = sql2o.open()) {
+                //The JWT signature algorithm we will be using to sign the token
+                SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.ES256;
+                SecretKey key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
+                //Creating the Header of
+                HashMap<String, Object> header = new HashMap<String, Object>();
+                header.put("alg", signatureAlgorithm.toString()); //HS256
+                header.put("typ", "JWT");
+                JwtBuilder tokenJWT = Jwts
+                        .builder()
+                        .setHeader(header)
+                        .claim("email", usuario.getEmail())
+                        .claim("password", usuario.getPassword())
+                        // Fri Jun 24 2016 15:33:42 GMT-0400 (EDT)
+                        .setIssuedAt(Date.from(Instant.ofEpochSecond(1466796822L)))
+                        // Sat Jun 24 2116 15:33:42 GMT-0400 (EDT)
+                        .setExpiration(Date.from(Instant.ofEpochSecond(4622470422L))).signWith(key);
+                //-------------------------------------------------------------------------------
+                //CREATING TOKEN + ADDING HEADER
+                //-------------------------------------------------------------------------------
+                //Compact the tokenJWT + save the value in tokenJWTString
+                String tokenJWTString = tokenJWT.compact();
+                System.out.println(tokenJWTString);
+                //Response to Request from Controller
+                return tokenJWTString;
+            } catch (Exception e) {
+                System.out.println(e);
+                return "Error creating the token JWT" + e;
+            }
+        }
+        else {
+            return null;
+        }
+    }
     @Override
     public boolean createUsuario(Usuario usuario) {
         try(Connection conn = sql2o.open()){

@@ -58,6 +58,11 @@ public class DiplomadoService {
          return DiplomadoRepository.updateDiplomado(Diplomado);
     }
 
+    @GetMapping("/diplomados/postulante/{id}")
+    public List<Diplomado> getDiplomadoByPostulante(@PathVariable int id){
+        return DiplomadoRepository.getDiplomadoByPostulante(id);
+    }   
+
 
     
 }

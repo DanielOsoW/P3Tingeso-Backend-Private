@@ -9,5 +9,6 @@ public interface Diplomado_Repository {
     public boolean deleteDiplomado(int id);
     public boolean updateDiplomado(Diplomado diplomado);
     public Diplomado getDiplomado(int id);
+    public List<Diplomado> getDiplomadoByPostulante(int id);
     
 }

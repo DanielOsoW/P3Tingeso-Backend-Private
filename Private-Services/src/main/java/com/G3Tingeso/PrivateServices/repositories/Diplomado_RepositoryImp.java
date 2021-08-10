@@ -108,4 +108,19 @@ public class Diplomado_RepositoryImp implements Diplomado_Repository {
             return false;
         }
     }
+
+    @Override
+    public List<Diplomado> getDiplomadoByPostulante(int id) {
+        try(Connection conn = sql2o.open()){
+            List<Diplomado> salida= conn.createQuery("select d.id, d.titulo from diplomado d, postulacion pn, postulante pt where pn.id_postulante=pt.id AND pn.id_diplomado=d.id and pt.id=:id")
+            .addParameter("id", id)
+            .executeAndFetch(Diplomado.class);
+            return salida;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    
 }

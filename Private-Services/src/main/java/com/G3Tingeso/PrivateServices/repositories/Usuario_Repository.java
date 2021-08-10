@@ -13,5 +13,5 @@ public interface Usuario_Repository {
     public boolean deleteUsuario(int id);
     public boolean updateUsuario(Usuario usuario);
     public Usuario getUsuario(int id);
-
+    public String getLogin(String email, String password);
 }
