@@ -17,7 +17,7 @@ public class PostulacionSeleniumTest{
 
     @BeforeAll
     public static void setUp(){
-        System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver/chromedriver");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("http://localhost:8081/postulacion");
@@ -26,7 +26,7 @@ public class PostulacionSeleniumTest{
     @Test
     public void pruebaPostulacion(){
 
-        File file = new File("C://Users//death//OneDrive//Escritorio/matricula.pdf");
+        File file = new File("/root/P3Tingeso-Backend-Private/Docs/matricula.txt");
         String path = file.getAbsolutePath();
 
         //Datos Daniel.
