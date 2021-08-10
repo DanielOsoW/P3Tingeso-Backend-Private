@@ -6,48 +6,36 @@ pipeline {
                 echo "Iniciando"
             } 
         }
-
-        stage("SonarQube analysis") {
-            //agent any
-            steps {
-                dir("/var/lib/jenkins/workspace/prueba1/backend"){
-                    withSonarQubeEnv('sonarqube') {
-                        sh 'chmod +x ./gradlew'
-                        sh './gradlew sonarqube'
-                    }
-                }
-            }
-        }
-
-        stage("JUnit"){
-            steps{
-                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    dir("/var/lib/jenkins/workspace/prueba1/backend") {
-                    sh './gradlew test'
-				    }
-                }
-                dir("/var/lib/jenkins/workspace/prueba1/backend/build/test-results/test"){
-                   junit 'TEST-*.xml'
-                }
-            }
-        }
-
-        stage('Crear imagen docker del backend privado'){
+	stage('Parar imagen anterior'){
+		
                 steps{
-                	dir("/var/lib/jenkins/workspace/private/Private-Services"){
-                       	 sh 'docker build -t backend Private-Services'
+		
+			dir("/var/lib/jenkins/workspace/BackendPrivate/Private-Services"){
+				sh 'docker stop backend || true && docker rm backend || true'	
+			}
+			
+        		
                 }             
         }
-        stage('Subir imagen a docker hub'){
+        stage('Contruir imagen docker'){
+		
                 steps{
-                	dir("/var/lib/jenkins/workspace/private/Private-Services"){
-                       	 sh 'docker push backend'
+        		dir("/var/lib/jenkins/workspace/BackendPrivate/Private-Services"){
+                 		sh 'docker build -t backend .'	
+	         	}
                 }             
         }
-        stage('Subir imagen a docker hub'){
+	stage('Correr imagen'){
                 steps{
-                	dir("/var/lib/jenkins/workspace/private/Private-Services"){
-                       	 sh ' sudo docker run -p 3000:3000  --network host backend2:latest'
+        		dir("/var/lib/jenkins/workspace/BackendPrivate/Private-Services"){
+				sh 'docker run --rm --name backend -d -p 3000:3000  --network host backend:latest'
+	         	}
+                }             
+        }
+	stage('Subir imagen docker a hub'){
+                steps{
+			sh 'docker tag backend ducktales10969/backend:latest'	
+			sh 'docker push ducktales10969/backend:latest'
                 }             
         }
         stage('Fin'){
