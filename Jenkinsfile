@@ -7,30 +7,7 @@ pipeline {
             } 
         }
 	    
-	stage("SonarQube analysis") {
-            //agent any
-            steps {
-                dir("/var/lib/jenkins/workspace/BackendPrivate/Private-Services"){
-                    withSonarQubeEnv('sonarqube') {
-                        sh 'chmod +x ./gradlew'
-                        sh './gradlew sonarqube'
-                    }
-                }
-            }
-        }
-
-        stage("JUnit"){
-            steps{
-                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    dir("/var/lib/jenkins/workspace/BackendPrivate/Private-Services") {
-                    sh './gradlew test'
-				    }
-                }
-                dir("/var/lib/jenkins/workspace/BackendPrivate/Private-Services/build/test-results/test"){
-                   junit 'TEST-*.xml'
-                }
-            }
-        }
+	
 	    
 	stage('Parar imagen anterior'){
 		
@@ -64,6 +41,32 @@ pipeline {
 			sh 'docker push ducktales10969/backend:latest'
                 }             
         }
+
+        stage("JUnit"){
+            steps{
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    dir("/var/lib/jenkins/workspace/BackendPrivate/Private-Services") {
+                    sh './gradlew test'
+				    }
+                }
+                dir("/var/lib/jenkins/workspace/BackendPrivate/Private-Services/build/test-results/test"){
+                   junit 'TEST-*.xml'
+                }
+            }
+        }
+		    
+    	stage("SonarQube analysis") {
+            //agent any
+            steps {
+                dir("/var/lib/jenkins/workspace/BackendPrivate/Private-Services"){
+                    withSonarQubeEnv('sonarqube') {
+                        sh 'chmod +x ./gradlew'
+                        sh './gradlew sonarqube'
+                    }
+                }
+            }
+        }
+	    
         stage('Fin'){
                 steps{
                     echo "Terminado"
