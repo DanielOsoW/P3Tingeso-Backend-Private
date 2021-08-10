@@ -19,7 +19,7 @@ public class SeleniumTest{
         System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver/chromedriver");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("http://localhost:8080/ingreso");
+        driver.get("http://localhost:8081/ingreso");
     }
 
     @Test
