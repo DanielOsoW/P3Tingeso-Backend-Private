@@ -49,7 +49,12 @@ public class UsuarioService {
         boolean result = UsuarioRepository.createUsuario(Usuario);
         return result;
     }
+    @PostMapping("/login/{email}/{password}")
+    public String getLogin(@PathVariable String email, @PathVariable String password){
+        String token= UsuarioRepository.getLogin(email,password);
 
+        return UsuarioRepository.getLogin(email,password);
+    }
     @DeleteMapping("/usuarios/delete/{id}")
     public boolean deleteUsuario(@PathVariable int id){
         return UsuarioRepository.deleteUsuario(id);
