@@ -31,7 +31,7 @@ public class InformacionModelTest{
     @Test
     public void testId_diplomado(){
         informacion.setId_diplomado(2);
-        Assertions.assertEquals(id, informacion.getId_diplomado(), "Listo");
+        Assertions.assertEquals(id_diplomado, informacion.getId_diplomado(), "Listo");
     }
     
 }

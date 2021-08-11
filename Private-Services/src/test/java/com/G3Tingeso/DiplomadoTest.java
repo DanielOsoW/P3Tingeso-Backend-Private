@@ -1,6 +1,6 @@
 package com.G3Tingeso;
 import com.G3Tingeso.PrivateServices.models.Diplomado;
-import com.G3Tingeso.PrivateServices.models.Docente;
+//import com.G3Tingeso.PrivateServices.models.Docente;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -15,8 +15,8 @@ public class DiplomadoTest{
     int cursos = 6;
     String imagen = "img";
     int arancel = 2400000;
-    Docente[] docentes = new Docente[2];
-    Docente coordinador = new Docente();
+    //Docente[] docentes = new Docente[2];
+    //Docente coordinador = new Docente();
 
     Diplomado diplomado = new Diplomado();
 
@@ -71,10 +71,10 @@ public class DiplomadoTest{
         diplomado.setDocentes(new Docente[2]);
         Assertions.assertEquals(coordinador, diplomado.getCoordinador(), "Listo");
     }
-    */
+    
     @Test
     public void coordinadorTest(){
         diplomado.setCoordinador(new Docente());
         Assertions.assertEquals(coordinador, diplomado.getCoordinador(), "Listo");
-    }
+    } */
 }

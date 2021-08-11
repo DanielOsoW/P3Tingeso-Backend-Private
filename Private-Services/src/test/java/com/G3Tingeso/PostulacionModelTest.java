@@ -36,7 +36,7 @@ public class PostulacionModelTest{
     }
     @Test
     public void testId_diplomado(){
-        postulacion.setId_diplomado(2);
+        postulacion.setId_diplomado(3);
         Assertions.assertEquals(id_diplomado, postulacion.getId_diplomado(), "Listo");
     }
 }
