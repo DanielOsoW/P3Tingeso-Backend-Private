@@ -1,4 +1,4 @@
-package com.G3Tingeso.PrivateServices;
+package com.G3Tingeso;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

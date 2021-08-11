@@ -1,13 +1,11 @@
 package com.G3Tingeso;
-import com.G3Tingeso.PrivateServices.repositories.Carta_Repository;
-import com.G3Tingeso.PrivateServices.repositories.Carta_RepositoryImp;
 import com.G3Tingeso.PrivateServices.models.Carta;
-import com.G3Tingeso.PrivateServices.services.CartaService;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
+@SpringBootTest
 public class CartaModelTest{
     int id = 1;
     String descripcion = "Carta";
