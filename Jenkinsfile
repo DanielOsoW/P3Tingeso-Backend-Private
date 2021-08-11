@@ -44,6 +44,9 @@ pipeline {
 
         stage("JUnit"){
             steps{
+                dir("/var/lib/jenkins/workspace/BackendPrivate/Private-Services/build/test-results/test"){
+                    sh 'rm TEST-*.xml'
+                }
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     dir("/var/lib/jenkins/workspace/BackendPrivate/Private-Services") {
                     sh './gradlew test'
