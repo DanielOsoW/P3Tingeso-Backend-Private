@@ -1,8 +1,8 @@
 package com.G3Tingeso;
 import com.G3Tingeso.PrivateServices.repositories.Rol_docente_Repository;
 import com.G3Tingeso.PrivateServices.repositories.Rol_docente_RepositoryImp;
-import com.G3Tingeso.PrivateServices.models.Rol;
-import com.G3Tingeso.PrivateServices.services.RolService;
+import com.G3Tingeso.PrivateServices.models.Rol_docente;
+import com.G3Tingeso.PrivateServices.services.Rol_docenteService;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
