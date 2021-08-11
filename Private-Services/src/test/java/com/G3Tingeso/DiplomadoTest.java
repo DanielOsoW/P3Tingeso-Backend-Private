@@ -4,9 +4,7 @@ import com.G3Tingeso.PrivateServices.models.Docente;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
 public class DiplomadoTest{
     int id = 1;
     String titulo = "Ciencia de Datos";

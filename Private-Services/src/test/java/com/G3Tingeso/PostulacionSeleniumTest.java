@@ -5,7 +5,9 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 import java.io.File;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -15,16 +17,16 @@ public class PostulacionSeleniumTest{
 
     @BeforeAll
     public static void setUp(){
-        System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver/chromedriver");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("http://localhost:8080/postulacion");
+        driver.get("http://localhost:8081/postulacion");
     }
 
     @Test
     public void pruebaPostulacion(){
 
-        File file = new File("C:\\USACH\\Sistope\\Lab3\\lab2_19.746.616-2\\onion_135x198.raw");
+        File file = new File("/root/P3Tingeso-Backend-Private/Docs/matricula.txt");
         String path = file.getAbsolutePath();
 
         //Datos Daniel.

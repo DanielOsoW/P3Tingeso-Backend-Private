@@ -1,14 +1,9 @@
 package com.G3Tingeso;
-import com.G3Tingeso.PrivateServices.repositories.Rol_Repository;
-import com.G3Tingeso.PrivateServices.repositories.Rol_RepositoryImp;
 import com.G3Tingeso.PrivateServices.models.Rol;
-import com.G3Tingeso.PrivateServices.services.RolService;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
 public class RolModelTest{
     
     int id = 1;

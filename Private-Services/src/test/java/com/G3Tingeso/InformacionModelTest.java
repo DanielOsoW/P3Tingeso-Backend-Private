@@ -1,14 +1,9 @@
 package com.G3Tingeso;
-import com.G3Tingeso.PrivateServices.repositories.Informacion_Repository;
-import com.G3Tingeso.PrivateServices.repositories.Informacion_RepositoryImp;
 import com.G3Tingeso.PrivateServices.models.Informacion;
-import com.G3Tingeso.PrivateServices.services.InformacionService;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
 public class InformacionModelTest{
     
     int id = 1;

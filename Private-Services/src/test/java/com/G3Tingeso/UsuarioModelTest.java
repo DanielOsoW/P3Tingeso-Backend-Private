@@ -1,14 +1,9 @@
 package com.G3Tingeso;
-import com.G3Tingeso.PrivateServices.repositories.Usuario_Repository;
-import com.G3Tingeso.PrivateServices.repositories.Usuario_RepositoryImp;
 import com.G3Tingeso.PrivateServices.models.Usuario;
-import com.G3Tingeso.PrivateServices.services.UsuarioService;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
 public class UsuarioModelTest{
 
     int id = 1;

@@ -1,14 +1,9 @@
 package com.G3Tingeso;
-import com.G3Tingeso.PrivateServices.repositories.Titulo_Repository;
-import com.G3Tingeso.PrivateServices.repositories.Titulo_RepositoryImp;
 import com.G3Tingeso.PrivateServices.models.Titulo;
-import com.G3Tingeso.PrivateServices.services.TituloService;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
 public class TituloModelTest{
     
     int id = 1;

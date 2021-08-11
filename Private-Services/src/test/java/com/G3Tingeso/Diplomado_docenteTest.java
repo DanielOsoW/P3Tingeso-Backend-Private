@@ -3,9 +3,7 @@ import com.G3Tingeso.PrivateServices.models.Diplomado_docente;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
 public class Diplomado_docenteTest{
     int id = 1;
     int id_docente = 2;

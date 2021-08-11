@@ -4,9 +4,7 @@ import com.G3Tingeso.PrivateServices.models.Titulo;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
 public class DocenteTest{
     int id = 1;
     String nombre = "Ing. Informático";

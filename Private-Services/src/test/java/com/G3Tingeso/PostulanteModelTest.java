@@ -1,14 +1,9 @@
 package com.G3Tingeso;
-import com.G3Tingeso.PrivateServices.repositories.Postulante_Repository;
-import com.G3Tingeso.PrivateServices.repositories.Postulante_RepositoryImp;
 import com.G3Tingeso.PrivateServices.models.Postulante;
-import com.G3Tingeso.PrivateServices.services.PostulanteService;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
 public class PostulanteModelTest{
     
     int id = 1;
