@@ -32,7 +32,7 @@ sonarqube {
     property "sonar.projectKey", "DanielOsoW_P3Tingeso-Backend-Private"
     property "sonar.organization", "danielosow"
     property "sonar.host.url", "http://142.93.49.198:3000/"
-	property 'sonar.tests', "./build/test-results/test"
+	property 'sonar.junit.reportPaths', "/build/test-results/test"
   }
 }
 
